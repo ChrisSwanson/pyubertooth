@@ -50,25 +50,25 @@
 ### Sample python library usage:
 ##### To open a connection to an ubertooth device:
     import ubertooth
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
 
 ##### To access 5 data blocks from an ubertooth device as a python iterator:
     import ubertooth
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
     for data in ut.rx_stream(count=5):
         print data
     ut.close()
 
 ##### To access data blocks from an ubertooth device as a python iterator for 30 seconds:
     import ubertooth
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
     for data in ut.rx_stream(secs=30):
         print data
     ut.close()
 
 ##### To access data from an ubertooth device until ctrl-C is pressed:
     import ubertooth
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
     try:
         for data in ut.rx_stream():
             print data
@@ -78,7 +78,7 @@
 
 ##### An example of directly streaming ubertooth data to a file for 60 seconds:
     import ubertooth
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
     f = open("dump_filename.dump", 'wb')
     for data in ut.rx_stream(secs=60):
         f.write(data)
@@ -87,7 +87,7 @@
 
 ##### Changing the channel on an ubertooth device:
     import ubertooth
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
     ut.set_channel(66)
 
 --------------------------
@@ -103,7 +103,7 @@
 ##### To display bluetooth packet data for an ubertooth device stream:    
     import ubertooth
     from pylibbtbb.bluetooth_packet import BtbbPacket
-    ut = Ubertooth()
+    ut = ubertooth.Ubertooth()
     for data in ut.rx_stream():
         print BtbbPacket(data=data)
     ut.close()
